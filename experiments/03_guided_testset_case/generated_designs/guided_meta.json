@@ -1,0 +1,37 @@
+{
+  "ddpm_ckpt": "ddpm_epoch_2950.pt",
+  "cnn_ckpt": "best.pt",
+  "cnn_cfg": "config.json",
+  "target_json": "y_target.json",
+  "target_used": {
+    "stress": true,
+    "nu": true
+  },
+  "num": 320,
+  "pool_mult": 3,
+  "pool_size": 960,
+  "timesteps": 500,
+  "schedule": "linear",
+  "volfrac_min": 0.1,
+  "guidance_scale": 2.0,
+  "guidance_start_frac": 0.3,
+  "guidance_power": 2.0,
+  "guidance_every": 1,
+  "w_stress": 1.0,
+  "w_nu": 1.0,
+  "volfrac_lambda": 0.0,
+  "total_draws": 960,
+  "kept_before_topk": 960,
+  "loss_norm_mean": 0.42736896872520447,
+  "loss_norm_min": 7.397598528768867e-05,
+  "loss_norm_max": 0.9446843862533569,
+  "vf_mean": 0.42945748567581177,
+  "vf_min": 0.14399999380111694,
+  "vf_max": 0.8912000060081482,
+  "artifacts": {
+    "grid_best": "grid_best.png",
+    "grid_best_gray": "grid_best_gray.png",
+    "preview_best": "preview_best.png",
+    "pt": "guided_samples_320.pt"
+  }
+}

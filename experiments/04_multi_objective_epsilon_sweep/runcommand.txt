@@ -1,0 +1,40 @@
+python guided_sample_diffusion_epsilon_constraint.py \
+  --ddpm_ckpt ../../checkpoints/ddpm_epoch_2950.pt \
+  --cnn_ckpt ../../checkpoints/cnn_surrogate_best.pt \
+  --cnn_cfg config.json \
+  --target_json y_target.json \
+  --out_dir guided_eps \
+  --seed 200 \
+  --num 320 \
+  --num_batch 32 \
+  --pool_mult 3 \
+  --volfrac_min 0.30 \
+  --guidance_scale 2.0 \
+  --guidance_start_frac 0.30 \
+  --guidance_power 2.0 \
+  --primary_objective stress \
+  --epsilon 0.02 \
+  --constraint_penalty 10.0 \
+  --max_draws 50000
+
+python sweep_epsilon_runs_and_merge.py \
+  --sampler_py guided_sample_diffusion_epsilon_constraint.py \
+  --ddpm_ckpt ../../checkpoints/ddpm_epoch_2950.pt \
+  --cnn_ckpt ../../checkpoints/cnn_surrogate_best.pt \
+  --cnn_cfg config.json \
+  --target_json y_target.json \
+  --out_dir sweep_eps_y_nu \
+  --primary_objective stress \
+  --epsilons 0.03,0.05,0.0835,0.1392,0.2323,0.3875,0.6463,1.0781,1.7985,3.0 \
+  --runs_per_epsilon 10 \
+  --base_seed 200 \
+  --num 1 \
+  --num_batch 128 \
+  --pool_mult 1 \
+  --max_draws 50000 \
+  --volfrac_min 0.10 \
+  --guidance_scale 2.0 \
+  --guidance_start_frac 0.30 \
+  --guidance_power 2.0 \
+  --constraint_penalty 10.0
+

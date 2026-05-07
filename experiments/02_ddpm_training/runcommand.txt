@@ -1,0 +1,25 @@
+python train_diffusion.py \
+  --npz_path ../../data/auxetic_unitcell_dataset.npz \
+  --out_dir ddpm1 \
+  --seed 60 \
+  --volfrac_min 0.15 \
+  --timesteps 500 \
+  --schedule linear \
+  --t_sampling uniform \
+  --epochs 3000 \
+  --save_every 50 \
+  --sample_every 50 \
+  --num_sample 36 \
+  --sample_nrow 6 \
+  --holdout_classes double_sin
+
+python sample_diffusion.py \
+  --ckpt ddpm1/checkpoints/ddpm_epoch_2800.pt \
+  --out_dir gen2 \
+  --num 1 \
+  --num_batch 1 \
+  --timesteps 500 \
+  --schedule linear \
+  --volfrac_min 0.15 \
+  --save_every 1
+

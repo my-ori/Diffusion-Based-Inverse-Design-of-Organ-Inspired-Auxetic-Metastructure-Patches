@@ -1,0 +1,16 @@
+{
+  "samples_pt": "guided_y1/guided_samples_320.pt",
+  "cnn_ckpt": "best.pt",
+  "cnn_cfg": "config.json",
+  "target_json": "y_target.json",
+  "target_used": {
+    "stress": true,
+    "nu": true
+  },
+  "npz": "auxetic_unitcell_dataset.npz",
+  "num_samples": 320,
+  "num_plotted": 320,
+  "out_dir": "guided_y1/evaluate",
+  "used_binarized": true,
+  "saved_designs": true
+}
