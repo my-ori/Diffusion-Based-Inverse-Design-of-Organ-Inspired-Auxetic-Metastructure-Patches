@@ -1,19 +1,11 @@
 # Local Checkpoints
 
-Large trained PyTorch checkpoint files are intentionally not included in the GitHub upload.
+Because the pretrained CNN and DDPM checkpoint files are too large to host directly in this GitHub repository, they are provided separately.
 
-If you want to rerun guided sampling without retraining, place local checkpoint files here, for example:
+### Download Pretrained Checkpoints
 
-```text
-checkpoints/
-  cnn_surrogate_best.pt
-  ddpm_epoch_2950.pt
-```
+**CNN checkpoint (`best.pt`):**  
+[https://drive.google.com/file/d/15DqcAVtY4yEr0D6PH5NUIecrM1MuURIi/view?usp=sharing]
 
-You can also generate these files by rerunning:
-
-- `experiments/01_cnn_surrogate/train_surrogate.py`
-- `experiments/02_ddpm_training/train_diffusion.py`
-
-The repository `.gitignore` excludes `*.pt` files so these local model weights are not committed accidentally.
-
+**DDPM checkpoint (`ddpm_epoch_2950.pt`):**  
+[https://drive.google.com/file/d/1WZmzYnS0JmEFVk0fnFlgR-PC0ZGjd-iP/view?usp=sharing]
