@@ -19,10 +19,3 @@ python train_surrogate.py \
   --epochs 3000 \
   --lr 5e-4
 ```
-
-The trained checkpoint `run1/best.pt` is ignored by Git. To use it with guided sampling, copy or rename it locally as:
-
-```text
-../../checkpoints/cnn_surrogate_best.pt
-```
-
