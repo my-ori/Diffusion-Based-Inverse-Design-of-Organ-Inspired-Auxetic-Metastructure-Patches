@@ -8,7 +8,7 @@ The code implements a data-driven inverse design workflow for auxetic patch unit
 4. Use an epsilon-constraint sweep to construct multi-objective stress/Poisson trade-off candidates.
 
 ## Repository Contents
-
+```
 data/
   auxetic_unitcell_dataset.npz
 experiments/
@@ -29,28 +29,7 @@ See [DATA_DICTIONARY.md](DATA_DICTIONARY.md) for the packaged dataset fields and
 
 ## Checkpoints and GitHub Upload
 
-Large PyTorch checkpoint files (`*.pt`) are intentionally excluded from the GitHub upload. The `.gitignore` file ignores all `*.pt` files so large trained weights are not committed accidentally.
-
-If you want to rerun guided sampling without retraining, place local checkpoint files under `checkpoints/`:
-
-```text
-checkpoints/
-  cnn_surrogate_best.pt
-  ddpm_epoch_2950.pt
-```
-
-For upload:
-
-```bash
-git init
-git add .
-git commit -m "Add publication code and data"
-git branch -M main
-git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
-git push -u origin main
-```
-
-With checkpoints excluded, the repository is small enough for a normal GitHub push.
+Large PyTorch checkpoint files (`*.pt`) are intentionally excluded from the GitHub upload. 
 
 ## Environment
 
@@ -102,5 +81,4 @@ The repository includes the following reusable outputs:
 - Guided test-set candidates: `experiments/03_guided_testset_case/generated_designs/`
 - Multi-objective Pareto plot: `experiments/04_multi_objective_epsilon_sweep/sweep_eps_y_nu/merged/pareto_scatter_all100.png`
 
-## Citation
 
