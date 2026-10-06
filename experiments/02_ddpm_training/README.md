@@ -89,8 +89,3 @@ python train_diffusion.py \
   --epochs 500 --sample_every 50 --save_every 50
 ```
 
-The generated checkpoint files are ignored by Git. To use a trained DDPM checkpoint with guided sampling, copy or rename it locally as:
-
-```text
-../../checkpoints/ddpm_epoch_2950.pt
-```
